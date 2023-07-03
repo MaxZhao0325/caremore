@@ -5,6 +5,7 @@
  * @format
  */
 
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 
 import { SafeAreaView, useColorScheme } from "react-native";
@@ -12,11 +13,9 @@ import { SafeAreaView, useColorScheme } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import HomeScreen from "./src/screens/home";
-import SearchResultsScreen from "./src/screens/searchResults";
+import Router from "./src/navigation/router";
 import DestinationSearchScreen from "./src/screens/destinationSearch";
-
-import Post from "./src/components/post";
-import feed from "./assets/data/feed";
+import WorkerInfoScreen from "./src/screens/wokerInfo";
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === "dark";
@@ -25,14 +24,10 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  // const post1 = feed[0];
-  // const post2 = feed[1];
-  // const post3 = feed[2];
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <DestinationSearchScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   );
 }
 

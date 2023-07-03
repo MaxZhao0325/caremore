@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("screen").width - 20,
     justifyContent: "center",
     alignItems: "center",
-    top: 20,
+    top: 50,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -19,11 +19,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    zIndex: 100,
   },
   searchButtonText: {
     fontSize: 16,
     fontWeight: "bold",
   },
+  postList: { marginTop: 60 },
 });
 
 export default styles;
