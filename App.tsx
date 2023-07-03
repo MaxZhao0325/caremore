@@ -13,6 +13,7 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import HomeScreen from "./src/screens/home";
 import SearchResultsScreen from "./src/screens/searchResults";
+import DestinationSearchScreen from "./src/screens/destinationSearch";
 
 import Post from "./src/components/post";
 import feed from "./assets/data/feed";
@@ -30,7 +31,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <SearchResultsScreen />
+      <DestinationSearchScreen />
     </SafeAreaView>
   );
 }
