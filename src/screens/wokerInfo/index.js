@@ -6,7 +6,7 @@ import styles from "./styles";
 import ProfileImage from "../../components/profile/ProfileImage";
 import Name from "../../components/profile/Name";
 import LocationAndDistance from "../../components/profile/LocationAndDistance";
-// import CommunalPanel from "./CommunalPanel";
+import CommunalPanel from "../../components/profile/CommunalPanel";
 
 const WorkerInfoScreen = () => {
   const [activeTab, setActiveTab] = useState("About");
@@ -29,7 +29,7 @@ const WorkerInfoScreen = () => {
       />
 
       {/* About/Expertise panel */}
-      {/* <CommunalPanel activeTab={activeTab} setActiveTab={setActiveTab} /> */}
+      <CommunalPanel activeTab={activeTab} setActiveTab={setActiveTab} />
     </View>
   );
 };
