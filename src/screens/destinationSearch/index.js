@@ -25,43 +25,31 @@ import SuggestionRow from "./suggestionRow";
 
 const DestinationSearchScreen = (props) => {
   const navigation = useNavigation();
-  const [inputText, setInputText] = useState("");
+
   return (
     <View style={styles.container}>
       {/* google place autocomplete */}
-      <View style={{ height: 500 }}>
-        <GooglePlacesAutocomplete
-          placeholder="Enter your location"
-          onPress={(data, details = null) => {
-            console.log(data, details);
-            // navigate to the search result page with the search data (location)
-            navigation.navigate("Home", {
-              screen: "Explore",
-              params: { screen: "SearchResults" },
-            });
-          }}
-          fetchDetails
-          styles={{
-            textInput: styles.textInput,
-          }}
-          query={{
-            key: "AIzaSyAkpQPw-PJ-SrYCdcbIvQgs3hm51KvQhrs",
-            language: "zh-CN",
-          }}
-          suppressDefaultStyles
-          renderRow={(item) => <SuggestionRow item={item} />}
-        />
-      </View>
-
-      {/* input component */}
-      <TextInput
-        style={styles.textInput}
+      <GooglePlacesAutocomplete
         placeholder="Enter your location"
-        value={inputText}
-        onChangeText={setInputText}
+        onPress={(data, details = null) => {
+          console.log(data, details);
+          // navigate to the search result page with the search data (location)
+          navigation.navigate("Home", {
+            screen: "Explore",
+            params: { screen: "SearchResults" },
+          });
+        }}
+        fetchDetails
+        styles={{
+          textInput: styles.textInput,
+        }}
+        query={{
+          key: "AIzaSyAkpQPw-PJ-SrYCdcbIvQgs3hm51KvQhrs",
+          language: "zh-CN",
+        }}
+        suppressDefaultStyles
+        renderRow={(item) => <SuggestionRow item={item} />}
       />
-
-      {/* list of destinations */}
     </View>
   );
 };
