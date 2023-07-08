@@ -10,6 +10,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeTabNavigator from "./homeTabNavigator";
 
+import SearchResultsTabNavigator from "./searchResultsTabNavigator";
+import ExploreNavigator from "./exploreNavigator";
+
 const Stack = createNativeStackNavigator();
 
 const Router = (props) => {
@@ -27,13 +30,13 @@ const Router = (props) => {
         name="Destination Search"
         component={DestinationSearchScreen}
         options={{
-          title: "Search your destination",
+          title: "Search results",
         }}
       />
 
       <Stack.Screen
         name="Search Result"
-        component={SearchResultsScreen}
+        component={ExploreNavigator}
         options={{
           title: "Search Result",
         }}

@@ -26,15 +26,15 @@ const HomeScreen = (props) => {
         onPress={() => navigation.navigate("Destination Search")}
       >
         <Fontisto name="search" size={25} color={"#f15454"} />
-        <Text style={styles.searchButtonText}>What is your location?</Text>
+        <Text style={styles.searchButtonText}>Search Carers</Text>
       </Pressable>
 
       {/* Post List */}
-      <FlatList
+      {/* <FlatList
         style={styles.postList}
         data={feed}
         renderItem={({ item }) => <Post post={item} />}
-      />
+      /> */}
     </View>
   );
 };

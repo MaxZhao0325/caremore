@@ -28,7 +28,7 @@ const DestinationSearchScreen = (props) => {
       {/* input component */}
       <TextInput
         style={styles.textInput}
-        placeholder="Enter your home town"
+        placeholder="Enter your location"
         value={inputText}
         onChangeText={setInputText}
       />
@@ -38,7 +38,12 @@ const DestinationSearchScreen = (props) => {
         data={searchResults}
         renderItem={({ item }) => (
           <Pressable
-            onPress={() => navigation.navigate("Home")}
+            onPress={() =>
+              navigation.navigate("Home", {
+                screen: "Explore",
+                params: { screen: "SearchResults" },
+              })
+            }
             style={styles.row}
           >
             <View style={styles.iconContainer}>
