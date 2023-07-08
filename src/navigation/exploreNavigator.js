@@ -19,7 +19,7 @@ const Router = (props) => {
       <Stack.Screen
         name="SearchResults"
         component={SearchResultsTabNavigator}
-        options={{ title: "Search Results" }}
+        options={{ title: "Search carers around you" }}
       />
     </Stack.Navigator>
   );

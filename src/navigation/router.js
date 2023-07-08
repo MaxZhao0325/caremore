@@ -30,7 +30,7 @@ const Router = (props) => {
         name="Destination Search"
         component={DestinationSearchScreen}
         options={{
-          title: "Search results",
+          title: "Search carers around you",
         }}
       />
 

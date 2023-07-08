@@ -20,11 +20,39 @@ import styles from "./styles";
 
 import { useNavigation } from "@react-navigation/native";
 
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import SuggestionRow from "./suggestionRow";
+
 const DestinationSearchScreen = (props) => {
   const navigation = useNavigation();
   const [inputText, setInputText] = useState("");
   return (
     <View style={styles.container}>
+      {/* google place autocomplete */}
+      <View style={{ height: 500 }}>
+        <GooglePlacesAutocomplete
+          placeholder="Enter your location"
+          onPress={(data, details = null) => {
+            console.log(data, details);
+            // navigate to the search result page with the search data (location)
+            navigation.navigate("Home", {
+              screen: "Explore",
+              params: { screen: "SearchResults" },
+            });
+          }}
+          fetchDetails
+          styles={{
+            textInput: styles.textInput,
+          }}
+          query={{
+            key: "AIzaSyAkpQPw-PJ-SrYCdcbIvQgs3hm51KvQhrs",
+            language: "zh-CN",
+          }}
+          suppressDefaultStyles
+          renderRow={(item) => <SuggestionRow item={item} />}
+        />
+      </View>
+
       {/* input component */}
       <TextInput
         style={styles.textInput}
@@ -34,25 +62,6 @@ const DestinationSearchScreen = (props) => {
       />
 
       {/* list of destinations */}
-      <FlatList
-        data={searchResults}
-        renderItem={({ item }) => (
-          <Pressable
-            onPress={() =>
-              navigation.navigate("Home", {
-                screen: "Explore",
-                params: { screen: "SearchResults" },
-              })
-            }
-            style={styles.row}
-          >
-            <View style={styles.iconContainer}>
-              <Entypo name={"location-pin"} size={30} />
-            </View>
-            <Text style={styles.locationText}>{item.description}</Text>
-          </Pressable>
-        )}
-      />
     </View>
   );
 };
