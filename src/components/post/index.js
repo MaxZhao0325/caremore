@@ -19,7 +19,7 @@ const CareWorkerPost = (props) => {
     <View>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.navigate("Worker Info")}
+        onPress={() => navigation.navigate("Worker Info", { postId: post.id })}
       >
         {/* Care Worker Image */}
         <Image

@@ -7,7 +7,7 @@ import ExpertisePanel from "./Expertise";
 
 import styles from "./styles";
 
-const CommunalPanel = ({ activeTab, setActiveTab }) => {
+const CommunalPanel = ({ worker, activeTab, setActiveTab }) => {
   return (
     <View style={styles.container}>
       <View style={styles.tabsContainer}>
@@ -27,11 +27,11 @@ const CommunalPanel = ({ activeTab, setActiveTab }) => {
 
       {activeTab === "About" ? (
         <View>
-          <AboutPanel />
+          <AboutPanel worker={worker} />
         </View>
       ) : (
         <View>
-          <ExpertisePanel />
+          <ExpertisePanel worker={worker} />
         </View>
       )}
     </View>

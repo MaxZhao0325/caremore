@@ -2,14 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import styles from "./styles";
 
-const AboutPanel = () => {
+const AboutPanel = ({ worker }) => {
   return (
     <View style={styles.container}>
-      <RatesPanel rate="20" />
+      <RatesPanel rate={worker.cost} />
       <MoreAboutMePanel
         languages="English, Spanish"
         hasDriverLicense={true}
-        hoursWorked="2000"
+        hoursWorked={worker.hoursWorked}
       />
       <MyBioPanel bio="I am an experienced care worker passionate about helping others..." />
     </View>
@@ -19,7 +19,7 @@ const AboutPanel = () => {
 const RatesPanel = ({ rate }) => (
   <View style={styles.ratesContainer}>
     <Text style={styles.title}>Rates</Text>
-    <Text style={styles.rate}>${rate} per hour</Text>
+    <Text style={styles.rate}>{rate}</Text>
   </View>
 );
 

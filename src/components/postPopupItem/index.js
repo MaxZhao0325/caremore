@@ -19,7 +19,7 @@ const PostPopupItem = (props) => {
     <View>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.navigate("Worker Info")}
+        onPress={() => navigation.navigate("Worker Info", { postId: post.id })}
       >
         <View style={styles.leftContainer}>
           {/* Care Worker Image */}

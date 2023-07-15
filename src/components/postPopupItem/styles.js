@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     marginRight: 10,
 
     // shadow
-    // shadowColor: "#000",
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 4,
-    // },
-    // shadowOpacity: 0.32,
-    // shadowRadius: 5.46,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
 
-    // elevation: 9,
+    elevation: 9,
   },
   // leftContainer: {
   //   flexDirection: "column",

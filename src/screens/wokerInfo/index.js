@@ -2,34 +2,40 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
+import { useRoute } from "@react-navigation/native";
 
 import ProfileImage from "../../components/profile/ProfileImage";
 import Name from "../../components/profile/Name";
 import LocationAndDistance from "../../components/profile/LocationAndDistance";
 import CommunalPanel from "../../components/profile/CommunalPanel";
 
-const WorkerInfoScreen = () => {
-  const [activeTab, setActiveTab] = useState("About");
+import careWorkers from "../../../assets/data/feed";
 
+const WorkerInfoScreen = (props) => {
+  const [activeTab, setActiveTab] = useState("About");
+  const route = useRoute();
+  const worker = careWorkers.find(
+    (worker) => worker.id === route.params.postId
+  );
   return (
     <View style={styles.container}>
       {/* main info panel */}
-      <ProfileImage
-        imageUrl={
-          "https://static-cdn.jtvnw.net/jtv_user_pictures/ebc00d2e-3be6-4530-8179-863459295698-profile_image-300x300.png"
-        }
-      />
+      <ProfileImage imageUrl={worker.image} />
 
-      <Name name="Jane Doe" isRecommended={true} />
+      <Name name={worker.name} isRecommended={true} />
       <LocationAndDistance
-        location="New York, Manhattan"
-        distance="2.5 miles"
-        experience="5 years"
-        isAuthenticated={true}
+        location={worker.location}
+        distance="10 miles"
+        experience={worker.experience}
+        isAuthenticated={worker.isAuthenticated}
       />
 
       {/* About/Expertise panel */}
-      <CommunalPanel activeTab={activeTab} setActiveTab={setActiveTab} />
+      <CommunalPanel
+        worker={worker}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
     </View>
   );
 };
