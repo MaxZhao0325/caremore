@@ -52,10 +52,7 @@ const PostPopupItem = (props) => {
               <Text style={styles.text}>{post.distance}</Text>
             </View>
             <Text style={styles.text}>{post.experience} experience</Text>
-            <View style={styles.infoItem}>
-              <Icon name="map-marker" size={12} style={styles.icon} />
-              <Text style={styles.text}>{post.location}</Text>
-            </View>
+
             <Text style={styles.text}>Hours worked: {post.hoursWorked}</Text>
             <Text style={styles.text}>Cost: {post.cost}</Text>
           </View>
