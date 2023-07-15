@@ -5,6 +5,10 @@
  * @format
  */
 
+// use newest version of google map
+// import { enableLatestRenderer } from "react-native-maps";
+// enableLatestRenderer();
+
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 

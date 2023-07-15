@@ -9,6 +9,11 @@ const careWorkers = [
     location: "New York, NY",
     hoursWorked: 1200,
     cost: "$20/hr",
+    coordinate: {
+      latitude: 28.3915637,
+      longitude: -16.6291304,
+    },
+    star: 1,
   },
   {
     id: 2,
@@ -20,6 +25,11 @@ const careWorkers = [
     location: "Brooklyn, NY",
     hoursWorked: 800,
     cost: "$18/hr",
+    coordinate: {
+      latitude: 28.4815637,
+      longitude: -16.2291304,
+    },
+    star: 2,
   },
   {
     id: 3,
@@ -31,6 +41,11 @@ const careWorkers = [
     location: "Queens, NY",
     hoursWorked: 2000,
     cost: "$22/hr",
+    coordinate: {
+      latitude: 28.2515637,
+      longitude: -16.3991304,
+    },
+    star: 3,
   },
   {
     id: 4,
@@ -42,6 +57,11 @@ const careWorkers = [
     location: "Manhattan, NY",
     hoursWorked: 500,
     cost: "$17/hr",
+    coordinate: {
+      latitude: 28.4815637,
+      longitude: -16.2991304,
+    },
+    star: 4,
   },
 ];
 
