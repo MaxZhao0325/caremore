@@ -21,6 +21,12 @@ import Router from "./src/navigation/router";
 import DestinationSearchScreen from "./src/screens/destinationSearch";
 import WorkerInfoScreen from "./src/screens/wokerInfo";
 
+// aws amplify auth
+import {
+  withAuthenticator,
+  useAuthenticator,
+} from "@aws-amplify/ui-react-native";
+
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === "dark";
 
@@ -35,4 +41,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

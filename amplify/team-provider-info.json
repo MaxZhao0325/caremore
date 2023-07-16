@@ -10,6 +10,11 @@
       "StackName": "amplify-caremore-dev-164330",
       "StackId": "arn:aws:cloudformation:us-east-1:518855845439:stack/amplify-caremore-dev-164330/dced51d0-23b4-11ee-aea6-0e1fc78f1b0b",
       "AmplifyAppId": "d1qu4p4of5vxk5"
+    },
+    "categories": {
+      "auth": {
+        "caremore4896d374": {}
+      }
     }
   }
 }

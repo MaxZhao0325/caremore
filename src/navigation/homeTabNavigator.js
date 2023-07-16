@@ -9,6 +9,7 @@ import EvilIcons from "react-native-vector-icons/EvilIcons";
 
 import ExploreNavigator from "./exploreNavigator";
 import SearchResultsMap from "../screens/searchResultsMap";
+import ProfileScreen from "../screens/profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +51,7 @@ const HomeTabNavigator = (props) => {
 
       <Tab.Screen
         name={"Profile"}
-        component={HomeScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <EvilIcons name="user" size={37} color={color} />
